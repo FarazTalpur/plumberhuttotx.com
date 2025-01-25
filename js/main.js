@@ -26,59 +26,32 @@
     });
     
     
+    // Dropdown on mouse hover
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
     
-
-    $(document).ready(function() {
-        // Disable Bootstrap's default dropdown behavior
-        var dropdownElement = document.getElementById('parentServiceDropdown');
-        var dropdown = new bootstrap.Dropdown(dropdownElement);
-        dropdown.dispose();
-    
-        // Dropdown on mouse hover
-        const $dropdown = $(".dropdown");
-        const $dropdownToggle = $(".dropdown-toggle");
-        const $dropdownMenu = $(".dropdown-menu");
-        const showClass = "show";
-    
-        $(window).on("load resize", function() {
-            if (this.matchMedia("(min-width: 992px)").matches) {
-                // Main hover event for "Services"
-                $dropdown.hover(
-                    function() {
-                        const $this = $(this);
-                        $this.addClass(showClass); // Show the top-level dropdown
-                        $this.find($dropdownToggle).attr("aria-expanded", "true");
-                        $this.find(".dropdown-menu").addClass(showClass); // Ensure it only applies to the main menu
-                    },
-                    function() {
-                        const $this = $(this);
-                        $this.removeClass(showClass); // Hide the top-level dropdown
-                        $this.find($dropdownToggle).attr("aria-expanded", "false");
-                        $this.find(".dropdown-menu").removeClass(showClass); // Ensure it hides properly
-                    }
-                );
-    
-                // Sub-menu hover for specific service items (e.g., "Service 1")
-                $(".dropdown .dropdown-item.dropdown-toggle").hover(
-                    function() {
-                        const $this = $(this);
-                        $this.next(".dropdown-menu").css("display", "block"); // Only show the sub-menu
-                    },
-                    function() {
-                        const $this = $(this);
-                        $this.next(".dropdown-menu").css("display", "none"); // Hide the sub-menu
-                    }
-                );
-            } else {
-                $dropdown.off("mouseenter mouseleave");
+    $(window).on("load resize", function() {
+        if (this.matchMedia("(min-width: 992px)").matches) {
+            $dropdown.hover(
+            function() {
+                const $this = $(this);
+                $this.addClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "true");
+                $this.find($dropdownMenu).addClass(showClass);
+            },
+            function() {
+                const $this = $(this);
+                $this.removeClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "false");
+                $this.find($dropdownMenu).removeClass(showClass);
             }
-        });
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
     });
-    
-
-
-
-
     
     
     // Back to top button

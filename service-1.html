@@ -80,27 +80,36 @@
             }
         }
 
-        .dropdown-menu .dropdown-menu {
-            display: none !important; /* Override Bootstrap styles */
-            left: 100%;
-            top: 10;
-            margin-left: 0.1rem;
+        /* Ensure sub-menus only appear when hovering over the parent item */
+        #service_dropdown .dropdown:hover > .dropdown-menu {
+            display: block;
         }
 
-        /*Force showing submenus on hover*/
-        .dropdown-menu .dropdown-item + .dropdown-menu,
-        .dropdown-menu .show {
-            display: block !important; /* Force the submenu to show when hovering over the parent */
+        #service_dropdown .dropdown-menu.dropdown-submenu {
+            top: -1px; /* Align with the parent item */
+            left: 100%; /* Position to the right of the parent item */
+            margin-left: 0.1rem; /* Optional: slight spacing */
+            display: none;
+            position: absolute;
         }
 
-        /* Keep submenu visible when hovering over it */
-        .dropdown-menu .dropdown-item:hover + .dropdown-menu {
-            display: block !important;
+        /* Optional styling for smooth transitions */
+        #service_dropdown .dropdown-menu {
+            display: none;
+            transition: all 0.3s ease-in-out;
+            z-index: 1050;
         }
 
-        /* Prevent submenus from hiding when hovering over the sub-menu */
-        .dropdown-item:hover + .dropdown-menu {
-            display: block !important;
+        /* Optional: Add delay for closing the menu */
+        #service_dropdown:hover > .dropdown-menu,
+        .dropdown-item.dropdown:hover > .dropdown-menu {
+            transition-delay: 0.2s; /* Delay for opening sub-menu */
+        }
+
+        /* Optional: Close the dropdown with a small delay */
+        #service_dropdown,
+        .dropdown-item.dropdown {
+            transition-delay: 0.2s; /* Delay to close dropdown */
         }
     </style>
     
@@ -157,19 +166,25 @@
                         <a href="index" class="nav-item nav-link active homeURL">Home</a>
                         <a href="about" class="nav-item nav-link">About</a>
                         
-                        <!-- Services Dropdown -->
+                    <!-- Services Dropdown -->
                     <div class="nav-item dropdown" id="parentServiceDropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div id="service_dropdown" class="dropdown-menu fade-up m-0">
-                            <!-- Service 1 -->
-                            <div class="dropdown">
-                                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Service 1</a>
-                                <div class="dropdown-menu">
-                                    <div><a href="service-1-1" class="dropdown-item">Sub-service 1.1</a></div>
-                                    <div><a href="service-1-2" class="dropdown-item">Sub-service 1.2</a></div>
+                            <div class="dropdown-item dropdown">
+                                <a href="https://google.com" class="dropdown-item dropdown-toggle">Service 1</a>
+                                <div class="dropdown-menu dropdown-submenu">
+                                    <a href="sub-service-1a" class="dropdown-item">Sub-Service 1A</a>
+                                    <a href="sub-service-1b" class="dropdown-item">Sub-Service 1B</a>
                                 </div>
                             </div>
-                            <!-- Add more services as needed -->
+                            <div class="dropdown-item dropdown">
+                                <a href="/services/service-2" class="dropdown-item dropdown-toggle">Service 2</a>
+                                <div class="dropdown-menu dropdown-submenu">
+                                    <a href="sub-service-2a" class="dropdown-item">Sub-Service 2A</a>
+                                    <a href="sub-service-2b" class="dropdown-item">Sub-Service 2B</a>
+                                </div>
+                            </div>
+                            <!-- <a href="/services/service-3" class="dropdown-item dropdown-toggle ">Service 3</a> -->
                         </div>
                     </div>
                         <a href="contact" class="nav-item nav-link">Contact</a>

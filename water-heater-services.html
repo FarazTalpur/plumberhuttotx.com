@@ -76,27 +76,36 @@
             }
         }
 
-        .dropdown-menu .dropdown-menu {
-            display: none !important; /* Override Bootstrap styles */
-            left: 100%;
-            top: 10;
-            margin-left: 0.1rem;
+        /* Ensure sub-menus only appear when hovering over the parent item */
+        #service_dropdown .dropdown:hover > .dropdown-menu {
+            display: block;
         }
 
-        /*Force showing submenus on hover*/
-        .dropdown-menu .dropdown-item + .dropdown-menu,
-        .dropdown-menu .show {
-            display: block !important; /* Force the submenu to show when hovering over the parent */
+        #service_dropdown .dropdown-menu.dropdown-submenu {
+            top: -1px; /* Align with the parent item */
+            left: 100%; /* Position to the right of the parent item */
+            margin-left: 0.1rem; /* Optional: slight spacing */
+            display: none;
+            position: absolute;
         }
 
-        /* Keep submenu visible when hovering over it */
-        .dropdown-menu .dropdown-item:hover + .dropdown-menu {
-            display: block !important;
+        /* Optional styling for smooth transitions */
+        #service_dropdown .dropdown-menu {
+            display: none;
+            transition: all 0.3s ease-in-out;
+            z-index: 1050;
         }
 
-        /* Prevent submenus from hiding when hovering over the sub-menu */
-        .dropdown-item:hover + .dropdown-menu {
-            display: block !important;
+        /* Optional: Add delay for closing the menu */
+        #service_dropdown:hover > .dropdown-menu,
+        .dropdown-item.dropdown:hover > .dropdown-menu {
+            transition-delay: 0.2s; /* Delay for opening sub-menu */
+        }
+
+        /* Optional: Close the dropdown with a small delay */
+        #service_dropdown,
+        .dropdown-item.dropdown {
+            transition-delay: 0.2s; /* Delay to close dropdown */
         }
   </style>
 <script type="application/ld+json">{
@@ -201,448 +210,7 @@
             }
         }
     ]
-}</script><script type="application/ld+json">[
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Emergency Plumbing",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "24-Hour Emergency Plumbing",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Burst Pipe Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Flooded Basement Solutions",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Leak Detection and Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Water Leak Detection",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Slab Leak Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Faucet Leak Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Toilet Leak Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Pipe Leak Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Drain Cleaning",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Clogged Drain Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Hydro Jetting Services",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Sewer Drain Cleaning",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Kitchen Drain Cleaning",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Bathroom Drain Cleaning",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Water Heater Services",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Water Heater Installation",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Water Heater Repair",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Tankless Water Heater Installation",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Water Heater Maintenance",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Water Heater Replacement",
-        "description": "This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Emily-J"
-            },
-            "reviewBody": "The leak detection service in Hutto was efficient and detailed. They found the problem fast and provided a lasting solution. Exceptional work!"
-        }
-    }
-]</script><script type="application/ld+json">{
+}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Pro Plumber Hutto",
@@ -757,7 +325,7 @@
 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
         Services
        </a>
-<div class="dropdown-menu fade-up m-0" id="service_dropdown"><div class="dropdown"><a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="emergency-plumbing">Emergency Plumbing</a><div class="dropdown-menu"><a class="dropdown-item" href="emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="dropdown-item" href="emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="dropdown-item" href="emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div></div><div class="dropdown"><a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="leak-detection-and-repair">Leak Detection and Repair</a><div class="dropdown-menu"><a class="dropdown-item" href="leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="dropdown-item" href="leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="dropdown-item" href="leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="dropdown-item" href="leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="dropdown-item" href="leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div></div><div class="dropdown"><a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="drain-cleaning">Drain Cleaning</a><div class="dropdown-menu"><a class="dropdown-item" href="drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="dropdown-item" href="drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="dropdown-item" href="drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="dropdown-item" href="drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="dropdown-item" href="drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div></div><div class="dropdown"><a class="dropdown-toggle dropdown-item" data-bs-toggle="dropdown" href="water-heater-services">Water Heater Services</a><div class="dropdown-menu"><a class="dropdown-item" href="water-heater-services/water-heater-installation">Water Heater Installation</a><a class="dropdown-item" href="water-heater-services/water-heater-repair">Water Heater Repair</a><a class="dropdown-item" href="water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="dropdown-item" href="water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="dropdown-item" href="water-heater-services/water-heater-replacement">Water Heater Replacement</a></div></div></div>
+<div class="dropdown-menu fade-up m-0" id="service_dropdown"><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="emergency-plumbing">Emergency Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="dropdown-item" href="emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="dropdown-item" href="emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="leak-detection-and-repair">Leak Detection and Repair</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="dropdown-item" href="leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="dropdown-item" href="leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="dropdown-item" href="leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="dropdown-item" href="leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="drain-cleaning">Drain Cleaning</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="dropdown-item" href="drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="dropdown-item" href="drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="dropdown-item" href="drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="dropdown-item" href="drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="water-heater-services">Water Heater Services</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="water-heater-services/water-heater-installation">Water Heater Installation</a><a class="dropdown-item" href="water-heater-services/water-heater-repair">Water Heater Repair</a><a class="dropdown-item" href="water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="dropdown-item" href="water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="dropdown-item" href="water-heater-services/water-heater-replacement">Water Heater Replacement</a></div></div></div>
 </div>
 <a class="nav-item nav-link" href="contact">
        Contact
@@ -855,7 +423,7 @@
 <div class="row">
 <div class="col-lg-10 mx-auto">
 <article class="bg-light p-4">
-<p id="related_content">A reliable water heater is essential for your home's comfort, and our services ensure your system performs at its best. Our expert <a href="/water-heater-services/water-heater-installation">Water Heater Installation</a> sets up your system for long-term efficiency and performance. If your existing unit isn't working properly, our <a href="/water-heater-services/water-heater-repair">Water Heater Repair</a> services quickly address issues to restore hot water. For a modern and energy-efficient upgrade, we offer professional <a href="/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a> tailored to your needs. Regular <a href="/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a> helps prevent costly breakdowns and extends the life of your unit. When it's time for an upgrade, our seamless <a href="/water-heater-services/water-heater-replacement">Water Heater Replacement</a> service ensures you're never left without hot water. Trust us for all your water heater needs!</p>
+<p id="related_content">A reliable water heater is essential for your home's comfort, and our services ensure your system performs at its best. Our expert <a href="https://plumberhuttotx.com/water-heater-services/water-heater-installation">Water Heater Installation</a> sets up your system for long-term efficiency and performance. If your existing unit isn't working properly, our <a href="https://plumberhuttotx.com/water-heater-services/water-heater-repair">Water Heater Repair</a> services quickly address issues to restore hot water. For a modern and energy-efficient upgrade, we offer professional <a href="https://plumberhuttotx.com/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a> tailored to your needs. Regular <a href="https://plumberhuttotx.com/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a> helps prevent costly breakdowns and extends the life of your unit. When it's time for an upgrade, our seamless <a href="https://plumberhuttotx.com/water-heater-services/water-heater-replacement">Water Heater Replacement</a> service ensures you're never left without hot water. Trust us for all your water heater needs!</p>
 </article>
 </div>
 </div>

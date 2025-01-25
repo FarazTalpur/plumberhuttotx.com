@@ -74,36 +74,39 @@
             }
         }
 
-        /* Ensure sub-menus only appear when hovering over the parent item */
-        #service_dropdown .dropdown:hover > .dropdown-menu {
-            display: block;
-        }
+         
+        @media screen and (min-width: 1024px) {
+            /* Ensure sub-menus only appear when hovering over the parent item */
+            #service_dropdown .dropdown:hover > .dropdown-menu {
+                display: block;
+            }
+            
+            #service_dropdown .dropdown-menu.dropdown-submenu {
+                top: -5px; /* Align with the parent item */
+                left: 90%; /* Position to the right of the parent item */
+                margin-left: 0.1rem; /* Optional: slight spacing */
+                display: none;
+                position: absolute;
+            }
 
-        #service_dropdown .dropdown-menu.dropdown-submenu {
-            top: -1px; /* Align with the parent item */
-            left: 100%; /* Position to the right of the parent item */
-            margin-left: 0.1rem; /* Optional: slight spacing */
-            display: none;
-            position: absolute;
-        }
+            /* Optional styling for smooth transitions */
+            #service_dropdown .dropdown-menu {
+                display: none;
+                transition: all 0.3s ease-in-out;
+                z-index: 1050;
+            }
 
-        /* Optional styling for smooth transitions */
-        #service_dropdown .dropdown-menu {
-            display: none;
-            transition: all 0.3s ease-in-out;
-            z-index: 1050;
-        }
+            /* Optional: Add delay for closing the menu */
+            #service_dropdown:hover > .dropdown-menu,
+            .dropdown-item.dropdown:hover > .dropdown-menu {
+                transition-delay: 0.2s; /* Delay for opening sub-menu */
+            }
 
-        /* Optional: Add delay for closing the menu */
-        #service_dropdown:hover > .dropdown-menu,
-        .dropdown-item.dropdown:hover > .dropdown-menu {
-            transition-delay: 0.2s; /* Delay for opening sub-menu */
-        }
-
-        /* Optional: Close the dropdown with a small delay */
-        #service_dropdown,
-        .dropdown-item.dropdown {
-            transition-delay: 0.2s; /* Delay to close dropdown */
+            /* Optional: Close the dropdown with a small delay */
+            #service_dropdown,
+            .dropdown-item.dropdown {
+                transition-delay: 0.2s; /* Delay to close dropdown */
+            }
         }
     </style>
 <script type="application/ld+json">{

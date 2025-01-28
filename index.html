@@ -31,7 +31,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
-    
+
         /* Floating full-width button */
         .call-now-button {
             position: fixed;
@@ -51,22 +51,22 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-    
+
         /* Hover effect */
         .call-now-button:hover {
             background-color: #218838;
         }
-    
+
         /* Active (clicked) state */
         .call-now-button:active {
             background-color: #1e7e34;
         }
-    
+
         /* Prevent blue text after click */
         .call-now-button:visited {
             color: white;
         }
-    
+
         /* Ensure the button is mobile-friendly */
         @media (min-width: 768px) {
             .call-now-button {
@@ -74,17 +74,21 @@
             }
         }
 
-        
+
         @media screen and (min-width: 1024px) {
+
             /* Ensure sub-menus only appear when hovering over the parent item */
-            #service_dropdown .dropdown:hover > .dropdown-menu {
+            #service_dropdown .dropdown:hover>.dropdown-menu {
                 display: block;
             }
-            
+
             #service_dropdown .dropdown-menu.dropdown-submenu {
-                top: -5px; /* Align with the parent item */
-                left: 90%; /* Position to the right of the parent item */
-                margin-left: 0.1rem; /* Optional: slight spacing */
+                top: -5px;
+                /* Align with the parent item */
+                left: 90%;
+                /* Position to the right of the parent item */
+                margin-left: 0.1rem;
+                /* Optional: slight spacing */
                 display: none;
                 position: absolute;
             }
@@ -97,15 +101,58 @@
             }
 
             /* Optional: Add delay for closing the menu */
-            #service_dropdown:hover > .dropdown-menu,
-            .dropdown-item.dropdown:hover > .dropdown-menu {
-                transition-delay: 0.2s; /* Delay for opening sub-menu */
+            #service_dropdown:hover>.dropdown-menu,
+            .dropdown-item.dropdown:hover>.dropdown-menu {
+                transition-delay: 0.2s;
+                /* Delay for opening sub-menu */
             }
 
             /* Optional: Close the dropdown with a small delay */
             #service_dropdown,
             .dropdown-item.dropdown {
-                transition-delay: 0.2s; /* Delay to close dropdown */
+                transition-delay: 0.2s;
+                /* Delay to close dropdown */
+            }
+        }
+
+        /* Ensure the mobile menu's dropdown and submenu are properly styled */
+        @media (max-width: 768px) {
+
+            /* #mobileServicesMenu {
+                padding-left: 20px;
+                padding-right: 20px;
+            } */
+
+            #mobileServiceDropdown .nav-link {
+                padding-left: 20px;
+            }
+
+            /* Submenu styling for mobile (indentation) */
+            .ms-3 {
+                padding-left: 30px;
+            }
+
+            .nav-item.nav-link {
+                font-size: 1rem;
+                /* Ensure the links are well-sized on mobile */
+            }
+
+            /* Custom styling for dropdown toggle on mobile */
+            #mobileServicesMenu .nav-item.nav-link {
+                font-weight: bold;
+            }
+
+            /* Ensure collapsed submenus are hidden on mobile until toggled */
+            #mobileServiceDropdown .collapse {
+                display: none;
+            }
+
+            #mobileServiceDropdown .collapse.show {
+                display: block;
+            }
+
+            #parentServiceDropdown {
+                display: none;
             }
         }
     </style>
@@ -178,7 +225,7 @@
 <body>
 <a class="call-now-button phoneNumber" href="tel:(773) 337-2939" id="btn_CallNow">
 <i>📞</i> Call Now
-        </a>
+    </a>
 <!-- Spinner Start -->
 <div class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" id="spinner">
 <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
@@ -225,6 +272,10 @@
 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Services</a>
 <div class="dropdown-menu fade-up m-0" id="service_dropdown"><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/emergency-plumbing">Emergency Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="dropdown-item" href="/emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="dropdown-item" href="/emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/leak-detection-and-repair">Leak Detection and Repair</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="dropdown-item" href="/leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="dropdown-item" href="/leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="dropdown-item" href="/leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="dropdown-item" href="/leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/drain-cleaning">Drain Cleaning</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="dropdown-item" href="/drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="dropdown-item" href="/drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="dropdown-item" href="/drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="dropdown-item" href="/drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/water-heater-services">Water Heater Services</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/water-heater-services/water-heater-installation">Water Heater Installation</a><a class="dropdown-item" href="/water-heater-services/water-heater-repair">Water Heater Repair</a><a class="dropdown-item" href="/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="dropdown-item" href="/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="dropdown-item" href="/water-heater-services/water-heater-replacement">Water Heater Replacement</a></div></div></div>
 </div>
+<div class="d-block d-lg-none" id="mobileServicesMenu">
+<a class="nav-item nav-link dropdown-toggle" data-bs-target="#mobileServiceDropdown" data-bs-toggle="collapse" href="#">Services</a>
+<div class="collapse" id="mobileServiceDropdown"><a class="nav-item nav-link dropdown-toggle" data-bs-target="#emergencyplumbingDropdown" data-bs-toggle="collapse" href="/emergency-plumbing">Emergency Plumbing</a><div class="collapse ms-3" id="emergencyplumbingDropdown"><a class="nav-item nav-link" href="/emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="nav-item nav-link" href="/emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="nav-item nav-link" href="/emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#leakdetectionandrepairDropdown" data-bs-toggle="collapse" href="/leak-detection-and-repair">Leak Detection and Repair</a><div class="collapse ms-3" id="leakdetectionandrepairDropdown"><a class="nav-item nav-link" href="/leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="nav-item nav-link" href="/leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#draincleaningDropdown" data-bs-toggle="collapse" href="/drain-cleaning">Drain Cleaning</a><div class="collapse ms-3" id="draincleaningDropdown"><a class="nav-item nav-link" href="/drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="nav-item nav-link" href="/drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="nav-item nav-link" href="/drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="nav-item nav-link" href="/drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="nav-item nav-link" href="/drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#waterheaterservicesDropdown" data-bs-toggle="collapse" href="/water-heater-services">Water Heater Services</a><div class="collapse ms-3" id="waterheaterservicesDropdown"><a class="nav-item nav-link" href="/water-heater-services/water-heater-installation">Water Heater Installation</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-repair">Water Heater Repair</a><a class="nav-item nav-link" href="/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-replacement">Water Heater Replacement</a></div></div>
+</div>
 <a class="nav-item nav-link" href="https://plumberhuttotx.com/testimonial">Testimonial</a>
 <a class="nav-item nav-link" href="faqs">FAQs</a>
 <a class="nav-item nav-link" href="https://plumberhuttotx.com/contact">Contact</a>
@@ -256,8 +307,10 @@
 <h5 class="text-white text-uppercase mb-3 animated slideInDown" id="home_niche_near_me">Plumber NEAR ME</h5>
 <h1 class="display-3 text-white animated slideInDown mb-4" id="home_niche_city">Plumber in Hutto, TX</h1>
 <p class="fs-5 fw-medium text-white mb-4 pb-2" id="home_short_meta">This is test content - Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
-<a class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft phoneNumber" href="tel:(773) 337-2939">Get Free Quote</a>
-<a class="btn btn-secondary py-md-3 px-md-5 animated slideInRight phoneNumber" href="tel:(773) 337-2939">Call for Emergency Services</a>
+<a class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft phoneNumber" href="tel:(773) 337-2939">Get
+                                    Free Quote</a>
+<a class="btn btn-secondary py-md-3 px-md-5 animated slideInRight phoneNumber" href="tel:(773) 337-2939">Call for
+                                    Emergency Services</a>
 </div>
 </div>
 </div>
@@ -423,7 +476,8 @@
 <div class="copyright">
 <div class="row">
 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        © <a class="border-bottom" href="#" id="home_footer_copyright">Plumber in Hutto, TX</a>, All Right Reserved.
+                        © <a class="border-bottom" href="#" id="home_footer_copyright">Plumber in Hutto, TX</a>, All
+                        Right Reserved.
                     </div>
 </div>
 </div>
@@ -445,5 +499,7 @@
 <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+<script>
+</script>
 </body>
 </html>

@@ -37,7 +37,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
-    
+
         /* Floating full-width button */
         .call-now-button {
             position: fixed;
@@ -57,22 +57,22 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-    
+
         /* Hover effect */
         .call-now-button:hover {
             background-color: #218838;
         }
-    
+
         /* Active (clicked) state */
         .call-now-button:active {
             background-color: #1e7e34;
         }
-    
+
         /* Prevent blue text after click */
         .call-now-button:visited {
             color: white;
         }
-    
+
         /* Ensure the button is mobile-friendly */
         @media (min-width: 768px) {
             .call-now-button {
@@ -80,16 +80,36 @@
             }
         }
 
+
         @media screen and (min-width: 1024px) {
+
             /* Ensure sub-menus only appear when hovering over the parent item */
-            #service_dropdown .dropdown:hover > .dropdown-menu {
+            #service_dropdown .dropdown:hover>.dropdown-menu {
                 display: block;
             }
-            
+
+            #serviceArea_dropdown .dropdown:hover>.dropdown-menu {
+                display: block;
+            }
+
             #service_dropdown .dropdown-menu.dropdown-submenu {
-                top: -5px; /* Align with the parent item */
-                left: 90%; /* Position to the right of the parent item */
-                margin-left: 0.1rem; /* Optional: slight spacing */
+                top: -5px;
+                /* Align with the parent item */
+                left: 90%;
+                /* Position to the right of the parent item */
+                margin-left: 0.1rem;
+                /* Optional: slight spacing */
+                display: none;
+                position: absolute;
+            }
+
+            #serviceArea_dropdown .dropdown-menu.dropdown-submenu {
+                top: -5px;
+                /* Align with the parent item */
+                left: 90%;
+                /* Position to the right of the parent item */
+                margin-left: 0.1rem;
+                /* Optional: slight spacing */
                 display: none;
                 position: absolute;
             }
@@ -101,58 +121,102 @@
                 z-index: 1050;
             }
 
+            /* Optional styling for smooth transitions */
+            #serviceArea_dropdown .dropdown-menu {
+                display: none;
+                transition: all 0.3s ease-in-out;
+                z-index: 1050;
+            }
+
             /* Optional: Add delay for closing the menu */
-            #service_dropdown:hover > .dropdown-menu,
-            .dropdown-item.dropdown:hover > .dropdown-menu {
-                transition-delay: 0.2s; /* Delay for opening sub-menu */
+            #service_dropdown:hover>.dropdown-menu,
+            .dropdown-item.dropdown:hover>.dropdown-menu {
+                transition-delay: 0.2s;
+                /* Delay for opening sub-menu */
+            }
+
+            /* Optional: Add delay for closing the menu */
+            #serviceArea_dropdown:hover>.dropdown-menu,
+            .dropdown-item.dropdown:hover>.dropdown-menu {
+                transition-delay: 0.2s;
+                /* Delay for opening sub-menu */
             }
 
             /* Optional: Close the dropdown with a small delay */
             #service_dropdown,
             .dropdown-item.dropdown {
-                transition-delay: 0.2s; /* Delay to close dropdown */
+                transition-delay: 0.2s;
+                /* Delay to close dropdown */
+            }
+
+            /* Optional: Close the dropdown with a small delay */
+            #serviceArea_dropdown,
+            .dropdown-item.dropdown {
+                transition-delay: 0.2s;
+                /* Delay to close dropdown */
             }
         }
+
         /* Ensure the mobile menu's dropdown and submenu are properly styled */
         @media (max-width: 768px) {
 
-/* #mobileServicesMenu {
-    padding-left: 20px;
-    padding-right: 20px;
-} */
+            /* #mobileServicesMenu {
+                padding-left: 20px;
+                padding-right: 20px;
+            } */
 
-#mobileServiceDropdown .nav-link {
-    padding-left: 20px;
-}
+            #mobileServiceDropdown .nav-link {
+                padding-left: 20px;
+            }
 
-/* Submenu styling for mobile (indentation) */
-.ms-3 {
-    padding-left: 30px;
-}
+            #mobileServiceAreaDropdown .nav-link {
+                padding-left: 20px;
+            }
 
-.nav-item.nav-link {
-    font-size: 1rem;
-    /* Ensure the links are well-sized on mobile */
-}
+            /* Submenu styling for mobile (indentation) */
+            .ms-3 {
+                padding-left: 30px;
+            }
 
-/* Custom styling for dropdown toggle on mobile */
-#mobileServicesMenu .nav-item.nav-link {
-    font-weight: bold;
-}
+            .nav-item.nav-link {
+                font-size: 1rem;
+                /* Ensure the links are well-sized on mobile */
+            }
 
-/* Ensure collapsed submenus are hidden on mobile until toggled */
-#mobileServiceDropdown .collapse {
-    display: none;
-}
+            /* Custom styling for dropdown toggle on mobile */
+            #mobileServicesMenu .nav-item.nav-link {
+                font-weight: bold;
+            }
 
-#mobileServiceDropdown .collapse.show {
-    display: block;
-}
+            #mobileServiceAreaMenu .nav-item.nav-link {
+                font-weight: bold;
+            }
 
-#parentServiceDropdown {
-    display: none;
-}
-}
+            /* Ensure collapsed submenus are hidden on mobile until toggled */
+            #mobileServiceDropdown .collapse {
+                display: none;
+            }
+
+            #mobileServiceAreaDropdown .collapse {
+                display: none;
+            }
+
+            #mobileServiceDropdown .collapse.show {
+                display: block;
+            }
+
+            #mobileServiceAreaDropdown .collapse.show {
+                display: block;
+            }
+
+            #parentServiceDropdown {
+                display: none;
+            }
+
+            #parentServiceAreaDropdown {
+                display: none;
+            }
+        }
     </style>
     
     </head>

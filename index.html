@@ -82,7 +82,22 @@
                 display: block;
             }
 
+            #serviceArea_dropdown .dropdown:hover>.dropdown-menu {
+                display: block;
+            }
+
             #service_dropdown .dropdown-menu.dropdown-submenu {
+                top: -5px;
+                /* Align with the parent item */
+                left: 90%;
+                /* Position to the right of the parent item */
+                margin-left: 0.1rem;
+                /* Optional: slight spacing */
+                display: none;
+                position: absolute;
+            }
+
+            #serviceArea_dropdown .dropdown-menu.dropdown-submenu {
                 top: -5px;
                 /* Align with the parent item */
                 left: 90%;
@@ -100,6 +115,13 @@
                 z-index: 1050;
             }
 
+            /* Optional styling for smooth transitions */
+            #serviceArea_dropdown .dropdown-menu {
+                display: none;
+                transition: all 0.3s ease-in-out;
+                z-index: 1050;
+            }
+
             /* Optional: Add delay for closing the menu */
             #service_dropdown:hover>.dropdown-menu,
             .dropdown-item.dropdown:hover>.dropdown-menu {
@@ -107,8 +129,22 @@
                 /* Delay for opening sub-menu */
             }
 
+            /* Optional: Add delay for closing the menu */
+            #serviceArea_dropdown:hover>.dropdown-menu,
+            .dropdown-item.dropdown:hover>.dropdown-menu {
+                transition-delay: 0.2s;
+                /* Delay for opening sub-menu */
+            }
+
             /* Optional: Close the dropdown with a small delay */
             #service_dropdown,
+            .dropdown-item.dropdown {
+                transition-delay: 0.2s;
+                /* Delay to close dropdown */
+            }
+
+            /* Optional: Close the dropdown with a small delay */
+            #serviceArea_dropdown,
             .dropdown-item.dropdown {
                 transition-delay: 0.2s;
                 /* Delay to close dropdown */
@@ -127,6 +163,10 @@
                 padding-left: 20px;
             }
 
+            #mobileServiceAreaDropdown .nav-link {
+                padding-left: 20px;
+            }
+
             /* Submenu styling for mobile (indentation) */
             .ms-3 {
                 padding-left: 30px;
@@ -142,8 +182,16 @@
                 font-weight: bold;
             }
 
+            #mobileServiceAreaMenu .nav-item.nav-link {
+                font-weight: bold;
+            }
+
             /* Ensure collapsed submenus are hidden on mobile until toggled */
             #mobileServiceDropdown .collapse {
+                display: none;
+            }
+
+            #mobileServiceAreaDropdown .collapse {
                 display: none;
             }
 
@@ -151,7 +199,15 @@
                 display: block;
             }
 
+            #mobileServiceAreaDropdown .collapse.show {
+                display: block;
+            }
+
             #parentServiceDropdown {
+                display: none;
+            }
+
+            #parentServiceAreaDropdown {
                 display: none;
             }
         }
@@ -275,6 +331,15 @@
 <div class="d-block d-lg-none" id="mobileServicesMenu">
 <a class="nav-item nav-link dropdown-toggle" data-bs-target="#mobileServiceDropdown" data-bs-toggle="collapse" href="#">Services</a>
 <div class="collapse" id="mobileServiceDropdown"><a class="nav-item nav-link dropdown-toggle" data-bs-target="#emergencyplumbingDropdown" data-bs-toggle="collapse" href="/emergency-plumbing">Emergency Plumbing</a><div class="collapse ms-3" id="emergencyplumbingDropdown"><a class="nav-item nav-link" href="/emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="nav-item nav-link" href="/emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="nav-item nav-link" href="/emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#leakdetectionandrepairDropdown" data-bs-toggle="collapse" href="/leak-detection-and-repair">Leak Detection and Repair</a><div class="collapse ms-3" id="leakdetectionandrepairDropdown"><a class="nav-item nav-link" href="/leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="nav-item nav-link" href="/leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#draincleaningDropdown" data-bs-toggle="collapse" href="/drain-cleaning">Drain Cleaning</a><div class="collapse ms-3" id="draincleaningDropdown"><a class="nav-item nav-link" href="/drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="nav-item nav-link" href="/drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="nav-item nav-link" href="/drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="nav-item nav-link" href="/drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="nav-item nav-link" href="/drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#waterheaterservicesDropdown" data-bs-toggle="collapse" href="/water-heater-services">Water Heater Services</a><div class="collapse ms-3" id="waterheaterservicesDropdown"><a class="nav-item nav-link" href="/water-heater-services/water-heater-installation">Water Heater Installation</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-repair">Water Heater Repair</a><a class="nav-item nav-link" href="/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-replacement">Water Heater Replacement</a></div></div>
+</div>
+<!-- Service Area Dropdown -->
+<div class="nav-item dropdown" id="parentServiceAreaDropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Service Areas</a>
+<div class="dropdown-menu fade-up m-0" id="serviceArea_dropdown"><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/carol-meadows">Carol Meadows</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/creekside-estates">Creekside Estates</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/brushy-creek-estates">Brushy Creek Estates</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/emory-farms">Emory Farms</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/county-estates">County Estates</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/creek-bend">Creek Bend</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/clarks-crossing">Clarks Crossing</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/brushy-creek-meadows">Brushy Creek Meadows</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/riverwalk">Riverwalk</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/hutto-highlands">Hutto Highlands</a></div>
+</div>
+<div class="d-block d-lg-none" id="mobileServiceAreaMenu">
+<a class="nav-item nav-link dropdown-toggle" data-bs-target="#mobileServiceAreaDropdown" data-bs-toggle="collapse" href="#">Service Areas</a>
+<div class="collapse" id="mobileServiceAreaDropdown"><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/carol-meadows">Carol Meadows</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/creekside-estates">Creekside Estates</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/brushy-creek-estates">Brushy Creek Estates</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/emory-farms">Emory Farms</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/county-estates">County Estates</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/creek-bend">Creek Bend</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/clarks-crossing">Clarks Crossing</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/brushy-creek-meadows">Brushy Creek Meadows</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/riverwalk">Riverwalk</a><a class="dropdown-item" href="https://plumberhuttotx.com/service-area/hutto-highlands">Hutto Highlands</a></div>
 </div>
 <a class="nav-item nav-link" href="https://plumberhuttotx.com/testimonial">Testimonial</a>
 <a class="nav-item nav-link" href="https://plumberhuttotx.com/faqs">FAQs</a>

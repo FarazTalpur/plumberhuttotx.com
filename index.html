@@ -16,8 +16,13 @@
         <!-- Google Web Fonts -->
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Roboto:wght@500;700&amp;display=swap"
-                rel="stylesheet" />
+        
+        <!-- Preload the font CSS to speed up fetching -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" as="style" />
+
+        <!-- Apply the font stylesheet -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" />
+
         
         
         <!-- Icon Font Stylesheet -->
@@ -28,10 +33,12 @@
 
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-        <!-- Customized Bootstrap Stylesheet -->
+        <!-- Preload Bootstrap CSS to ensure it's fetched as early as possible -->
+        <link rel="preload" href="css/bootstrap.min.css" as="style" />
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet" />
+        
         <style>
                 /* General reset */
                 body {

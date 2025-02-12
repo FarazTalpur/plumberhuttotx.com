@@ -49,37 +49,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://plumberhuttotx.com/service-areas/emory-farms</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://plumberhuttotx.com/service-areas/brushy-creek-meadows</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://plumberhuttotx.com/service-areas/county-estates</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://plumberhuttotx.com/service-areas/creekside-estates</loc>
+    <loc>https://plumberhuttotx.com/service-areas/carol-meadows</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://plumberhuttotx.com/service-areas/clarks-crossing</loc>
-    <lastmod>2025-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://plumberhuttotx.com/service-areas/riverwalk</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -97,7 +73,31 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://plumberhuttotx.com/service-areas/carol-meadows</loc>
+    <loc>https://plumberhuttotx.com/service-areas/brushy-creek-meadows</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://plumberhuttotx.com/service-areas/creekside-estates</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://plumberhuttotx.com/service-areas/emory-farms</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://plumberhuttotx.com/service-areas/riverwalk</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://plumberhuttotx.com/service-areas/county-estates</loc>
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
